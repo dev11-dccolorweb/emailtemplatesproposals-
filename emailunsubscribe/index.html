@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unsubscribe page - SPROUT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous"/>
+  <link rel="stylesheet" id="google-fonts-1-css"
+        href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPlayfair+Display%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.4.4"
+        type="text/css" media="all">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../waiting.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .firstTitle {
+    color: #7ECCB5;
+    font-size: 19px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-family: 'Roboto', Sans-serif;
+  }
+
+  .secondTitle, .secondTitle2 {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.5em;
+    color: #44A98B;
+  }
+
+  .thirdTitle {
+    font-family: "Playfair Display", Sans-serif;
+    font-size: 45px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.5em;
+    color: #44A98B;
+  }
+
+  .buttonUnsubscribe {
+    background: #44a98b;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 45px 0px rgb(68 169 139 / 37%);
+    padding: 20px 30px 20px 30px;
+  }
+
+  .parragraph {
+    color: #595959
+  }
+
+  .imageLogo {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .imageLogo2 {
+    display: none;
+  }
+
+  .imageLogoContainer {
+    display: inline-block;
+  }
+
+  .sproutLogo {
+    width: 250px;
+    padding: 20px;
+  }
+
+  .emoticon {
+    font-size: 40px;
+  }
+
+  .container {
+    overflow-y: scroll;
+    max-width: 100%;
+  }
+
+  .container > div {
+    background-color: white;
+    padding: 1rem;
+  }
+
+  .containerEmail2 {
+    text-align: left;
+  }
+
+
+  @media (max-width: 768px) {
+    .secondTitle, .secondTitle2 {
+      line-height: 1.5em;
+    }
+
+  }
+
+  @media (max-width: 576px) {
+    .buttonUnsubscribe {
+      text-align: center;
+      width: 100%;
+      margin: 10px;
+    }
+
+    .thirdTitle {
+      text-align: center;
+    }
+
+    .secondTitle, .secondTitle2 {
+      text-align: center;
+    }
+
+    .firstTitle {
+      text-align: center;
+    }
+
+    .parragraph {
+      text-align: center;
+    }
+
+    .imageLogo {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .imageLogo {
+      display: none;
+    }
+
+    .imageLogoContainer {
+      display: none;
+    }
+
+    .imageLogo2 {
+      width: 100%;
+      display: inline-block;
+    }
+
+    .containerEmail {
+      margin-top: 0%;
+    }
+
+    .emoticonCointainer {
+      text-align: center;
+    }
+
+    .sproutLogoContainer {
+      text-align: center;
+    }
+  }
+
+</style>
+<div id="animationload">
+  <div id="osahanloading"></div>
+</div>
+
+<input type="hidden" value="<?php echo $unsubguid; ?>" id="unsubguid"/>
+<input type="hidden" value="<?php echo $userEmail; ?>" id="userEmail"/>
+
+<div class="d-flex align-items-center justify-content-center container">
+
+  <div class="containerEmail" style="text-align: center;">
+    <div class="containerEmail2" style="">
+      <div class="sproutLogoContainer" style="position: relative;">
+        <div class="col-12">
+          <img src="https://crm.sprout.online/images/logo-sprout-v2.png" alt="" class="sproutLogo">
+        </div>
+      </div>
+      <div class="row align-items-center p-0 m-0 justify-content-md-center">
+        <div class="col-xsm-10 col-sm-4 p-4 imageLogoContainer flex-grow-1">
+          <img src="../emailsCancel.png" alt="" class="imageLogo">
+        </div>
+
+        <div class="col-xsm-12 col-sm-8 col-md-6 col-lg-5  flex-grow-1" style="
+                      background : url('../dots-circle.png') bottom right no-repeat;
+                      background-size : 175px;
+                    ">
+          <h2 class="firstTitle">Hi!</h2>
+          <h1 class="secondTitle">Welcome</h1>
+          <div class="emoticonCointainer">
+                        <span class='thirdTitle'>It's glad to see you here</span>
+            <span class="emoticon">
+                            😃
+                        </span>
+          </div>
+          <p class="parragraph">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          </p>
+          <img src="../emailsCancel.png" alt="" class="imageLogo2">
+
+          <button class="btn btn-success buttonUnsubscribe" id='bttnUnsubMe'>
+            Ok!
+          </button>
+
+          <!------------------Messages------------------>
+          <div id='UnsubDone' class="mt-4 emoticonCointainer" style="display: none;">
+            <h1 class="secondTitle2">Done.</h1>
+            <h1 class="thirdTitle" style="line-height: 1.2;">We are missing you.</h1>
+            <span class="emoticon">
+                            😔
+                        </span>
+          </div>
+
+          <div id='UnsubFail' class="mt-4 emoticonCointainerk" style="display: none;">
+            <h1 class="secondTitle2">An error occured.</h1>
+            <h1 class="thirdTitle" style="line-height: 1.2;">Very sorry. Please try again.</h1>
+          </div>
+
+          <div id="animationload">
+            <div id="osahanloading"></div>
+          </div>
+          <!------------------/Messages------------------>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
